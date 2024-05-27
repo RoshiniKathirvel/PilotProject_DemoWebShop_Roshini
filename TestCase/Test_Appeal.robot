@@ -16,12 +16,14 @@ Verify the element of Z to A
     ApparealResources.click the appereal z to A
 
 verify the element of low to high
+    [Tags]    smoke
     ApparealResources.click the appereal low to high
 
 verify the element of high to low
+    [Tags]    smoke
     ApparealResources.click the appereal high to low
 
 verify the element of created on
-    [Tags]    regreesion
+    [Tags]    smoke
     ApparealResources.click the appereal created on
 
