@@ -8,26 +8,27 @@ Test Teardown    close browser session
 
 *** Test Cases ***
 Click the facebook link
-    [Tags]    regression
+    [Tags]    smoke
     ContactResources.click for the facebook
-    Switch Window     new
+    Switch Window     new    
+    sleep     10s
+    ContactResources.verify the facebook page is open
 
 Click the twitter link
-    [Tags]    regression
     ContactResources.click for the twitter
     Switch Window    new
+    sleep     10s
+    ContactResources.verify the twitter page is open
 
 Click the Rss link
-    [Tags]    regression
     ContactResources.click for the rss
 
 Click the youtube link
-    [Tags]    regression
     ContactResources.click for the youtube
     Switch Window    new
+    sleep     10s
+    ContactResources.verify the youtube page is open
 
 Click the google link
-    [Tags]    regression
     ContactResources.click for the google
     Switch Window    new
-

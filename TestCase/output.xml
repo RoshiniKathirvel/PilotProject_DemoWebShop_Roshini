@@ -1,95 +1,148 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.0 (Python 3.12.2 on win32)" generated="2024-05-28T07:04:44.270283" rpa="false" schemaversion="5">
-<suite id="s1" name="Test ValidLogin" source="C:\Roshini_Demo\TestCase\Test_ValidLogin.robot">
-<test id="s1-t1" name="Login test template" line="17">
+<robot generator="Robot 7.0 (Python 3.12.2 on win32)" generated="2024-05-28T21:52:19.998103" rpa="false" schemaversion="5">
+<suite id="s1" name="Test Register Female" source="C:\Roshini_Demo\TestCase\Test_Register_Female.robot">
+<test id="s1-t1" name="Register fields" line="19">
 <kw name="open the browser" owner="GenericResources" type="SETUP">
 <kw name="Create Webdriver" owner="SeleniumLibrary">
-<msg time="2024-05-28T07:04:45.580226" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<msg time="2024-05-28T21:52:23.275056" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
 <arg>${browser_name}</arg>
 <doc>Creates an instance of Selenium WebDriver.</doc>
-<status status="PASS" start="2024-05-28T07:04:45.580226" elapsed="1.903981"/>
+<status status="PASS" start="2024-05-28T21:52:23.275056" elapsed="6.256793"/>
 </kw>
 <kw name="Go To" owner="SeleniumLibrary">
-<msg time="2024-05-28T07:04:47.484780" level="INFO">Opening url 'https://demowebshop.tricentis.com/'</msg>
+<msg time="2024-05-28T21:52:29.533893" level="INFO">Opening url 'https://demowebshop.tricentis.com/'</msg>
 <arg>${url}</arg>
 <doc>Navigates the current browser window to the provided ``url``.</doc>
-<status status="PASS" start="2024-05-28T07:04:47.484207" elapsed="4.495035"/>
+<status status="PASS" start="2024-05-28T21:52:29.531849" elapsed="3.950044"/>
 </kw>
 <kw name="Maximize Browser Window" owner="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2024-05-28T07:04:51.979242" elapsed="0.074828"/>
+<status status="PASS" start="2024-05-28T21:52:33.484597" elapsed="0.059953"/>
 </kw>
 <kw name="Set Selenium Implicit Wait" owner="SeleniumLibrary">
 <arg>5</arg>
 <doc>Sets the implicit wait value used by Selenium.</doc>
-<status status="PASS" start="2024-05-28T07:04:52.054070" elapsed="0.001672"/>
+<status status="PASS" start="2024-05-28T21:52:33.545262" elapsed="0.003209"/>
 </kw>
-<status status="PASS" start="2024-05-28T07:04:45.580226" elapsed="6.476510"/>
+<status status="PASS" start="2024-05-28T21:52:23.273464" elapsed="10.275007"/>
 </kw>
-<kw name="Login postive testcase1">
-<kw name=" Click the Login element" owner="LoginResources">
+<kw name="Register test template">
+<kw name="Generate Random Email">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-05-28T21:52:33.560651" level="INFO">${random_email} = jzkrtxy@gmail.com</msg>
+<var>${random_email}</var>
+<arg>''.join(random.choices(string.ascii_lowercase, k=${length})) + '@gmail.com'</arg>
+<arg>random, string</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-05-28T21:52:33.554506" elapsed="0.006145"/>
+</kw>
+<return>
+<value>${random_email}</value>
+<status status="PASS" start="2024-05-28T21:52:33.560651" elapsed="0.001343"/>
+</return>
+<msg time="2024-05-28T21:52:33.561994" level="INFO">${random_email} = jzkrtxy@gmail.com</msg>
+<var>${random_email}</var>
+<status status="PASS" start="2024-05-28T21:52:33.554506" elapsed="0.007488"/>
+</kw>
+<kw name="click the register list" owner="RegisterResources">
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-05-28T07:04:52.060041" level="INFO">Clicking element 'xpath=//a[text()='Log in']'.</msg>
-<arg>${login}</arg>
+<msg time="2024-05-28T21:52:33.562997" level="INFO">Clicking element 'xpath=//a[text()='Register']'.</msg>
+<arg>${register_click}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-05-28T07:04:52.059031" elapsed="0.806272"/>
+<status status="PASS" start="2024-05-28T21:52:33.562997" elapsed="0.787437"/>
 </kw>
-<status status="PASS" start="2024-05-28T07:04:52.056736" elapsed="0.808567"/>
+<status status="PASS" start="2024-05-28T21:52:33.562997" elapsed="0.788964"/>
 </kw>
-<kw name=" Fill the Login Form" owner="LoginResources">
+<kw name="Select the female radiobutton" owner="RegisterResources">
+<kw name="Select Radio Button" owner="SeleniumLibrary">
+<msg time="2024-05-28T21:52:34.352966" level="INFO">Selecting 'F' from radio button 'Gender'.</msg>
+<arg>Gender</arg>
+<arg>F</arg>
+<doc>Sets the radio button group ``group_name`` to ``value``.</doc>
+<status status="PASS" start="2024-05-28T21:52:34.352966" elapsed="0.103897"/>
+</kw>
+<status status="PASS" start="2024-05-28T21:52:34.351961" elapsed="0.107662"/>
+</kw>
+<kw name="Enter the value in the input field" owner="RegisterResources">
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-05-28T07:04:52.865303" level="INFO">Typing text 'j.k.rose1@gmail.com' into text field 'xpath=//input[@class='email']'.</msg>
+<msg time="2024-05-28T21:52:34.461318" level="INFO">Typing text 'John' into text field 'xpath=//input[@id='FirstName']'.</msg>
+<arg>${firstname_L}</arg>
+<arg>${firstname}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-28T21:52:34.459623" elapsed="0.194782"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-05-28T21:52:34.654945" level="INFO">Typing text 'JK' into text field 'xpath=(//input[@class='text-box single-line'])[2]'.</msg>
+<arg>${lastname_L}</arg>
+<arg>${lastname}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-28T21:52:34.654945" elapsed="0.099758"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-05-28T21:52:34.755562" level="INFO">Typing text 'jzkrtxy@gmail.com' into text field 'css=input#Email'.</msg>
+<arg>${emails}</arg>
 <arg>${email}</arg>
-<arg>${username}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-05-28T07:04:52.865303" elapsed="0.119049"/>
+<status status="PASS" start="2024-05-28T21:52:34.755562" elapsed="0.105009"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-05-28T07:04:52.984352" level="INFO">Typing text 'roshini' into text field 'xpath=//input[@class='password']'.</msg>
-<arg>${passwords}</arg>
+<msg time="2024-05-28T21:52:34.860571" level="INFO">Typing text 'sivakami' into text field 'css=input#Password'.</msg>
 <arg>${password}</arg>
+<arg>${passw}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-05-28T07:04:52.984352" elapsed="0.085122"/>
+<status status="PASS" start="2024-05-28T21:52:34.860571" elapsed="0.109375"/>
 </kw>
-<arg>${username}</arg>
-<arg>${password}</arg>
-<status status="PASS" start="2024-05-28T07:04:52.865303" elapsed="0.204171"/>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-05-28T21:52:34.969946" level="INFO">Typing text 'sivakami' into text field 'xpath=(//input[@type='password'])[2]'.</msg>
+<arg>${con_pass}</arg>
+<arg>${confir_pass}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-28T21:52:34.969946" elapsed="0.115672"/>
 </kw>
-<kw name=" Click the login button" owner="LoginResources">
+<arg>${firstname}</arg>
+<arg>${lastname}</arg>
+<arg>${random_email}</arg>
+<arg>${passw}</arg>
+<arg>${confirm_pass}</arg>
+<status status="PASS" start="2024-05-28T21:52:34.459623" elapsed="0.625995"/>
+</kw>
+<kw name="Click the register button" owner="RegisterResources">
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-05-28T07:04:53.072522" level="INFO">Clicking element 'xpath=//input[@class='button-1 login-button']'.</msg>
-<arg>${login_btn}</arg>
+<msg time="2024-05-28T21:52:35.085618" level="INFO">Clicking element 'css=input#register-button'.</msg>
+<arg>${register_btn}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-05-28T07:04:53.072522" elapsed="1.212480"/>
+<status status="PASS" start="2024-05-28T21:52:35.085618" elapsed="1.661778"/>
 </kw>
-<status status="PASS" start="2024-05-28T07:04:53.071392" elapsed="1.213610"/>
+<status status="PASS" start="2024-05-28T21:52:35.085618" elapsed="1.661778"/>
 </kw>
-<kw name=" Check the login page message" owner="LoginResources">
+<kw name="check for the success msg" owner="RegisterResources">
 <kw name="Element Text Should Be" owner="SeleniumLibrary">
-<msg time="2024-05-28T07:04:54.290783" level="INFO">Verifying element 'xpath=//a[text()='j.k.rose1@gmail.com']' contains exact text 'j.k.rose1@gmail.com'.</msg>
-<arg>${login_msg}</arg>
-<arg>${username}</arg>
+<msg time="2024-05-28T21:52:36.749399" level="INFO">Verifying element 'css=div[class='result']' contains exact text 'Your registration completed'.</msg>
+<arg>${success_msg}</arg>
+<arg>Your registration completed</arg>
 <doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
-<status status="PASS" start="2024-05-28T07:04:54.290153" elapsed="0.046738"/>
+<status status="PASS" start="2024-05-28T21:52:36.747396" elapsed="0.057063"/>
 </kw>
-<arg>${username}</arg>
-<status status="PASS" start="2024-05-28T07:04:54.285002" elapsed="0.053265"/>
+<status status="PASS" start="2024-05-28T21:52:36.747396" elapsed="0.057063"/>
 </kw>
-<arg>username=j.k.rose1@gmail.com</arg>
-<arg>password=roshini</arg>
-<status status="PASS" start="2024-05-28T07:04:52.056736" elapsed="2.281531"/>
+<arg>firstname=John</arg>
+<arg>lastname=JK</arg>
+<arg>email=john@gmail.com</arg>
+<arg>passw=sivakami</arg>
+<arg>confirm_pass=sivakami</arg>
+<status status="PASS" start="2024-05-28T21:52:33.554506" elapsed="3.249953"/>
 </kw>
 <kw name="close browser session" owner="GenericResources" type="TEARDOWN">
 <kw name="Close Browser" owner="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2024-05-28T07:04:54.344023" elapsed="2.238609"/>
+<status status="PASS" start="2024-05-28T21:52:36.805976" elapsed="2.510897"/>
 </kw>
-<status status="PASS" start="2024-05-28T07:04:54.342058" elapsed="2.240574"/>
+<status status="PASS" start="2024-05-28T21:52:36.805976" elapsed="2.510897"/>
 </kw>
-<status status="PASS" start="2024-05-28T07:04:45.580226" elapsed="11.002406"/>
+<status status="PASS" start="2024-05-28T21:52:23.271243" elapsed="16.046173"/>
 </test>
-<doc>Test the Valid information to the login page</doc>
-<status status="PASS" start="2024-05-28T07:04:44.275415" elapsed="12.307217"/>
+<doc>Test the invalid credentials to the login page</doc>
+<status status="PASS" start="2024-05-28T21:52:19.998103" elapsed="19.319880"/>
 </suite>
 <statistics>
 <total>
@@ -98,7 +151,7 @@
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="Test ValidLogin">Test ValidLogin</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="Test Register Female">Test Register Female</stat>
 </suite>
 </statistics>
 <errors>
