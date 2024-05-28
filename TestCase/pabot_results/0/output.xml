@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0 (Python 3.12.2 on win32)" generated="2024-05-28T06:55:49.496450" rpa="false" schemaversion="5">
+<suite id="s1" name="Test Appeal" source="C:\Roshini_Demo\TestCase\Test_Appeal.robot">
+<test id="s1-t1" name="verify the element of A to Z" line="10">
+<kw name="open the browser" owner="GenericResources" type="SETUP">
+<kw name="Create Webdriver" owner="SeleniumLibrary">
+<msg time="2024-05-28T06:55:49.977922" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<arg>${browser_name}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<status status="PASS" start="2024-05-28T06:55:49.977922" elapsed="4.273754"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2024-05-28T06:55:54.251676" level="INFO">Opening url 'https://demowebshop.tricentis.com/'</msg>
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2024-05-28T06:55:54.251676" elapsed="5.112632"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-05-28T06:55:59.366813" elapsed="0.119356"/>
+</kw>
+<kw name="Set Selenium Implicit Wait" owner="SeleniumLibrary">
+<arg>5</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" start="2024-05-28T06:55:59.486169" elapsed="0.003826"/>
+</kw>
+<status status="PASS" start="2024-05-28T06:55:49.977922" elapsed="9.513175"/>
+</kw>
+<kw name="click the appereal A to z" owner="ApparealResources">
+<kw name="Click Link" owner="SeleniumLibrary">
+<msg time="2024-05-28T06:55:59.498119" level="INFO">Clicking link 'css:a[href='/apparel-shoes']'.</msg>
+<arg>${appereal}</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-28T06:55:59.496911" elapsed="1.439259"/>
+</kw>
+<kw name="Select From List By Label" owner="SeleniumLibrary">
+<msg time="2024-05-28T06:56:00.937212" level="INFO">Selecting options from selection list 'id:products-orderby' by label Name: A to Z.</msg>
+<arg>id:products-orderby</arg>
+<arg>Name: A to Z</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<status status="PASS" start="2024-05-28T06:56:00.936170" elapsed="1.379557"/>
+</kw>
+<kw name="Select From List By Label" owner="SeleniumLibrary">
+<msg time="2024-05-28T06:56:02.316839" level="INFO">Selecting options from selection list 'id:products-pagesize' by label 4.</msg>
+<arg>id:products-pagesize</arg>
+<arg>4</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<status status="PASS" start="2024-05-28T06:56:02.316839" elapsed="1.918583"/>
+</kw>
+<kw name="Select From List By Label" owner="SeleniumLibrary">
+<msg time="2024-05-28T06:56:04.235422" level="INFO">Selecting options from selection list 'id:products-viewmode' by label Grid.</msg>
+<arg>id:products-viewmode</arg>
+<arg>Grid</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<status status="PASS" start="2024-05-28T06:56:04.235422" elapsed="0.127056"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-05-28T06:56:04.362478" level="INFO">Clicking element 'xpath=//h2[@class='product-title']'.</msg>
+<arg>${click}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-28T06:56:04.362478" elapsed="2.088596"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2024-05-28T06:56:06.451074" level="INFO">Verifying element 'xpath=//div[@class='product-name']' contains exact text '50's Rockabilly Polka Dot Top JR Plus Size'.</msg>
+<arg>${select_prod}</arg>
+<arg>50's Rockabilly Polka Dot Top JR Plus Size</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2024-05-28T06:56:06.451074" elapsed="0.051205"/>
+</kw>
+<status status="PASS" start="2024-05-28T06:55:59.493692" elapsed="7.008587"/>
+</kw>
+<kw name="close browser session" owner="GenericResources" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-05-28T06:56:06.502279" elapsed="2.486420"/>
+</kw>
+<status status="PASS" start="2024-05-28T06:56:06.502279" elapsed="2.486420"/>
+</kw>
+<tag>smoke</tag>
+<status status="PASS" start="2024-05-28T06:55:49.977922" elapsed="19.011359"/>
+</test>
+<doc>Test the sort values in the page</doc>
+<status status="PASS" start="2024-05-28T06:55:49.518024" elapsed="19.471823"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">smoke</stat>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Test Appeal">Test Appeal</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
